@@ -16,7 +16,7 @@ Websites ontworpen in de **CS Group · Web Hub**.
 ## Klanten
 
 <!-- KLANTEN:START -->
-_Nog geen websites._
+- **FAT – FIMA Airtechnic** (`fat-fima-airtechnic/`): klantpresentatie met variant A (Split Studio) en variant B (Narrative Workflow) in `presentatie/`
 <!-- KLANTEN:END -->
 
 Een website komt hier terecht via de knop **Naar GitHub** in de hub, waarna Claude de export uitvoert.

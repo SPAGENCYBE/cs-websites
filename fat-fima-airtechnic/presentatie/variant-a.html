@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIMA Airtechnic | Industriële radiaalventilatoren op maat</title>
+<meta name="description" content="FIMA Airtechnic in Dendermonde ontwerpt, bouwt en onderhoudt industriële radiaalventilatoren op maat. Sinds 1983.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · vorm: Split Studio · vingerafdruk: Hanging|Asymmetric spans|Hairline|Solid|Tightly cropped|Fade-up · kritiek: P4 H5 E4 S4 R4 V4 · zwakste: S, de hero kon elke fabrikant zijn; opgelost met het eigen werkpuntschema van een radiaalventilator als signatuur */
+/* ============ AANPASSEN: KLEUREN, LETTERTYPE, AFRONDING ============ */
+:root{
+  --night:#070b1a;          /* donkere grond: hero, servicebalk, footer */
+  --navy:#101746;           /* FAT-navy: titels, primaire knop */
+  --air:#2dade2;            /* FAT-blauw: luchtstroom, accenten op donker */
+  --air-ink:#04121c;        /* tekst op een blauw vlak */
+  --steel:#e9edf0;          /* koel staalgrijs vlak */
+  --paper:#fbfcfd;          /* licht getinte papiergrond */
+  --ink:#0e1430;            /* tekst op licht */
+  --grey:#4f5966;           /* lopende tekst op licht */
+  --mist:rgba(233,239,255,.74);   /* lopende tekst op donker */
+  --line:rgba(14,20,48,.14);      /* haarlijn op licht */
+  --line-d:rgba(233,239,255,.16); /* haarlijn op donker */
+  --glass:rgba(233,239,255,.06);  /* glasvlak op donker */
+  --white:#fbfcfe;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --r-sm:6px; --r-md:12px; --r-lg:20px;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px; --space-11:160px;
+  --text-hero:clamp(42px,6.4vw,96px); --text-section:clamp(34px,3.6vw,52px); --text-title:22px; --text-body:17px; --text-small:15px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+/* ================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);font-size:var(--text-body);line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-weight:700;font-stretch:118%;line-height:1.04;letter-spacing:-.015em;overflow-wrap:break-word;min-width:0}
+p{margin:0}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+:focus-visible{outline:2px solid var(--air);outline-offset:3px}
+
+/* ---------- Header ---------- */
+.site-head{position:sticky;top:0;z-index:20;background:var(--night);color:var(--white);border-bottom:1px solid var(--line-d)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);min-height:72px}
+.brand{display:flex;align-items:baseline;gap:var(--space-3);text-decoration:none;color:var(--white)}
+.brand b{font-weight:800;font-stretch:125%;font-size:24px;letter-spacing:.01em}
+.brand span{font-size:var(--text-small);color:var(--mist)}
+.menu{display:flex;align-items:center;gap:var(--space-6)}
+.menu a{text-decoration:none;color:var(--mist);font-size:var(--text-small);transition:color .2s var(--ease)}
+.menu a:hover,.menu a[aria-current="page"]{color:var(--white)}
+.langs{display:flex;gap:var(--space-2);font-size:var(--text-small)}
+.langs a{min-width:36px;min-height:36px;display:inline-grid;place-items:center;border:1px solid var(--line-d);border-radius:var(--r-sm);text-decoration:none;color:var(--mist)}
+.langs a[aria-current="true"]{color:var(--white);border-color:var(--air)}
+.menu-toggle{display:none;font:inherit;color:var(--white);background:transparent;border:1px solid var(--line-d);border-radius:var(--r-sm);min-height:44px;padding:0 var(--space-4);cursor:pointer}
+.menu-toggle:hover{border-color:var(--air)}
+
+/* ---------- Knoppen ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--space-5);border-radius:var(--r-sm);font:inherit;font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;cursor:pointer;border:1px solid transparent;transition:background-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.btn-air{background:var(--air);color:var(--air-ink)}
+.btn-air:hover{background:var(--white)}
+.btn-air:active{transform:translateY(1px)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--ink)}
+.btn-navy:active{transform:translateY(1px)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--night);color:var(--white);min-height:calc(100svh - 72px);display:flex;align-items:center;padding:var(--space-8) 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-8);align-items:center}
+.hero h1{font-size:clamp(40px,5.4vw,84px);font-weight:800;font-stretch:125%;line-height:.98;max-width:12ch;hyphens:manual;-webkit-hyphens:manual}
+.hero p{margin-top:var(--space-5);font-size:20px;line-height:1.5;color:var(--mist);max-width:30ch}
+.hero .actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-6)}
+.hero .ghost{color:var(--white);text-decoration:underline;text-underline-offset:6px;min-height:48px;display:inline-flex;align-items:center;padding:0 var(--space-3)}
+.hero .ghost:hover{color:var(--air)}
+.chart{border:1px solid var(--line-d);border-radius:var(--r-lg);background:var(--glass);padding:var(--space-6)}
+.chart figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-4);font-size:var(--text-small);color:var(--mist)}
+.chart .axis{stroke:var(--line-d);stroke-width:1}
+.chart .curve{fill:none;stroke:var(--air);stroke-width:3}
+.chart .sys{fill:none;stroke:var(--mist);stroke-width:1.5;stroke-dasharray:6 6}
+.chart .pt{fill:var(--air)}
+.chart text{fill:var(--mist);font-family:var(--font);font-size:13px}
+
+/* ---------- Secties ---------- */
+section{scroll-margin-top:80px}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-8);align-items:start}
+.split.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.sec-head h2{font-size:var(--text-section);color:var(--navy);max-width:14ch}
+.sec-head p{margin-top:var(--space-4);color:var(--grey);max-width:44ch}
+.make{padding:var(--space-10) 0 var(--space-9)}
+.apps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.apps li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:var(--space-5);padding:var(--space-5) 0;border-bottom:1px solid var(--line)}
+.apps h3{font-size:var(--text-title);color:var(--navy)}
+.apps p{color:var(--grey)}
+
+.work{padding:var(--space-9) 0 var(--space-11);border-top:1px solid var(--line)}
+.flow{list-style:none;margin:0;padding:0;counter-reset:step;display:grid;gap:0}
+.flow li{counter-increment:step;display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1.3fr);gap:var(--space-5);align-items:baseline;padding:var(--space-5) 0;border-top:1px solid var(--line)}
+.flow li:last-child{border-bottom:1px solid var(--line)}
+.flow li::before{content:counter(step);font-weight:800;font-stretch:125%;font-size:28px;color:var(--navy)}
+.flow h3{font-size:var(--text-title);color:var(--navy)}
+.flow p{color:var(--grey)}
+
+.service{background:var(--night);color:var(--white);padding:var(--space-10) 0}
+.service .sec-head h2{color:var(--white)}
+.service .sec-head p{color:var(--mist)}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-6);list-style:none;margin:0;padding:0}
+.svc li{padding:var(--space-4) 0;border-top:1px solid var(--line-d)}
+.svc b{display:block;font-weight:600;font-size:18px}
+.svc span{color:var(--mist);font-size:var(--text-small)}
+.service .btn{margin-top:var(--space-6)}
+
+.years{padding:var(--space-11) 0 var(--space-9)}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);border-top:2px solid var(--navy);padding-top:var(--space-5)}
+.timeline b{display:block;font-weight:800;font-stretch:125%;font-size:clamp(26px,2.4vw,36px);color:var(--navy);line-height:1.1}
+.timeline h3{margin-top:var(--space-3);font-size:18px;font-stretch:100%;font-weight:600}
+.timeline p{margin-top:var(--space-2);color:var(--grey);font-size:var(--text-small)}
+
+.contact{background:var(--steel);padding:var(--space-10) 0}
+.facts{list-style:none;margin:var(--space-6) 0 0;padding:0}
+.facts li{padding:var(--space-4) 0;border-top:1px solid var(--line)}
+.facts small{display:block;font-size:14px;color:var(--grey)}
+.facts a{text-decoration:none;font-weight:600}
+.facts a:hover{color:var(--navy);text-decoration:underline}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);background:var(--paper);border-radius:var(--r-lg);padding:var(--space-7)}
+.field{display:grid;gap:var(--space-2)}
+.field.full{grid-column:1/-1}
+label{font-size:var(--text-small);font-weight:600}
+input,textarea{font:inherit;font-size:16px;width:100%;min-height:48px;padding:var(--space-3) var(--space-4);border:1px solid var(--line);border-radius:var(--r-sm);background:var(--white);color:var(--ink);transition:border-color .2s var(--ease)}
+input:hover,textarea:hover{border-color:var(--grey)}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--air);outline-offset:1px;border-color:var(--navy)}
+textarea{min-height:140px;resize:vertical}
+.form-note{grid-column:1/-1;font-size:14px;color:var(--grey)}
+
+.site-foot{background:var(--night);color:var(--mist);padding:var(--space-8) 0 var(--space-6);font-size:var(--text-small)}
+.site-foot .wrap{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:var(--space-6)}
+.site-foot b{display:block;color:var(--white);font-weight:800;font-stretch:125%;font-size:28px}
+.site-foot a{text-decoration:none}
+.site-foot a:hover{color:var(--white);text-decoration:underline}
+.site-foot .legal{grid-column:1/-1;border-top:1px solid var(--line-d);padding-top:var(--space-5);display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
+
+/* ---------- Onthulling (alleen met JS, standaard zichtbaar) ---------- */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsief ---------- */
+@media (max-width:1024px){
+  .hero .wrap,.split,.split.flip{grid-template-columns:minmax(0,1fr)}
+  .timeline{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--space-6)}
+}
+@media (max-width:760px){
+  .menu-toggle{display:inline-flex;align-items:center}
+  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:var(--space-4);padding:var(--space-5) clamp(20px,5vw,80px) var(--space-6);background:var(--night);border-bottom:1px solid var(--line-d);display:none}
+  .menu.open{display:flex}
+  .apps li,.flow li{grid-template-columns:minmax(0,1fr)}
+  .flow li{grid-template-columns:48px minmax(0,1fr)}
+  .flow li p{grid-column:2}
+  .svc,form,.site-foot .wrap{grid-template-columns:minmax(0,1fr)}
+  .timeline{grid-template-columns:minmax(0,1fr)}
+  form{padding:var(--space-5)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.menu a,input,textarea{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>FAT</b><span>FIMA Airtechnic</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Hoofdmenu">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="#ventilatoren">Ventilatoren</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+      <div class="langs" aria-label="Taal"><a href="index.html" aria-current="true" lang="nl">NL</a><a href="en/index.html" lang="en">EN</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Radiaal&shy;ventilatoren gebouwd rond uw proces.</h1>
+        <p>Ontwerp, productie en service door één partner in Dendermonde.</p>
+        <div class="actions">
+          <a class="btn btn-air" href="#contact">Vraag een offerte aan</a>
+          <a class="ghost" href="#werkwijze">Zo werken we</a>
+        </div>
+      </div>
+      <figure class="chart" role="img" aria-label="Diagram: ventilatorkarakteristiek en systeemcurve snijden in het werkpunt">
+        <svg viewBox="0 0 600 360" aria-hidden="true">
+          <line class="axis" x1="60" y1="20" x2="60" y2="310"/>
+          <line class="axis" x1="60" y1="310" x2="580" y2="310"/>
+          <path class="curve" d="M60 70 C220 64 330 92 420 160 C480 206 530 262 560 300"/>
+          <path class="sys" d="M60 300 C200 290 320 240 420 160 C470 120 520 70 560 30"/>
+          <circle class="pt" cx="420" cy="160" r="8"/>
+          <text x="432" y="150">werkpunt</text>
+          <text x="66" y="40">druk</text>
+          <text x="520" y="334">debiet</text>
+          <text x="96" y="62">ventilator</text>
+          <text x="150" y="282">installatie</text>
+        </svg>
+        <figcaption><span>Elke ventilator wordt berekend op het werkpunt van uw installatie.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="make" id="ventilatoren" aria-labelledby="make-title">
+    <div class="wrap split">
+      <div class="sec-head reveal">
+        <h2 id="make-title">Eén specialisme, tot in het detail.</h2>
+        <p>Robuust maatwerk voor industriële lucht- en gasstromen, uitgewerkt rond debiet, druk, temperatuur en inbouwruimte.</p>
+      </div>
+      <ul class="apps reveal">
+        <li><h3>Proceslucht</h3><p>Ventilatoren die mee draaien in uw productieproces, dag in dag uit.</p></li>
+        <li><h3>Afzuiging</h3><p>Voor stof, dampen en warme lucht, afgestemd op het leidingnet.</p></li>
+        <li><h3>Koel- en verbrandingslucht</h3><p>Stabiele luchttoevoer voor ovens, branders en koelsystemen.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="work" id="werkwijze" aria-labelledby="work-title">
+    <div class="wrap split flip">
+      <ol class="flow reveal">
+        <li><h3>Audit</h3><p>Wensen, eisen en technische mogelijkheden in kaart.</p></li>
+        <li><h3>Engineering</h3><p>Berekeningen en ontwerp, in 2D en 3D.</p></li>
+        <li><h3>Goedkeuring</h3><p>U keurt de plannen goed voor er gebouwd wordt.</p></li>
+        <li><h3>Productie</h3><p>Laswerk en assemblage in eigen atelier.</p></li>
+        <li><h3>Controle</h3><p>Balanceren, eindmontage en testen.</p></li>
+      </ol>
+      <div class="sec-head reveal">
+        <h2 id="work-title">Eerst de techniek, dan de productie.</h2>
+        <p>Pas na uw goedkeuring van de plannen starten we met bouwen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="service" id="service" aria-labelledby="service-title">
+    <div class="wrap split">
+      <div class="sec-head reveal">
+        <h2 id="service-title">Ook na de oplevering blijven we.</h2>
+        <p>Voor FIMA-ventilatoren en ventilatoren van andere merken.</p>
+        <a class="btn btn-air" href="#contact">Plan een interventie</a>
+      </div>
+      <ul class="svc reveal">
+        <li><b>Montage en opstart</b><span>Mechanische controle en inbedrijfstelling.</span></li>
+        <li><b>Onderhoud en herstelling</b><span>Gepland of dringend.</span></li>
+        <li><b>Modificaties</b><span>Wanneer uw proces verandert.</span></li>
+        <li><b>Wisselstukken</b><span>Ook op maat gemaakt.</span></li>
+        <li><b>Uitbalanceren</b><span>Ter plaatse, tegen trillingen.</span></li>
+        <li><b>Metingen</b><span>Druk, debiet, geluid en trillingen.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="years" aria-labelledby="years-title">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-bottom:var(--space-7)">
+        <h2 id="years-title">Belgisch, sinds 1983.</h2>
+      </div>
+      <div class="timeline reveal">
+        <div><b>1983</b><h3>Oprichting</h3><p>Belgische dochter van het Duitse FIMA.</p></div>
+        <div><b>Eind jaren 80</b><h3>Eigen productiehal</h3><p>Productie in eigen beheer.</p></div>
+        <div><b>1998</b><h3>Zelfstandig</h3><p>Volledig onafhankelijk vanuit België.</p></div>
+        <div><b>Vandaag</b><h3>Eén compact team</h3><p>Van eerste tekening tot nazorg.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap split">
+      <div class="sec-head">
+        <h2 id="contact-title">Een project of een probleem?</h2>
+        <p>Vertel ons zoveel mogelijk over de toepassing en de installatie.</p>
+        <ul class="facts">
+          <li><small>Adres</small>Industrieterrein Hoogveld 46, Zone A4, 9200 Dendermonde</li>
+          <li><small>Telefoon</small><a href="tel:+3252221256">+32 52 22 12 56</a></li>
+          <li><small>E-mail</small><a href="mailto:sales@fima.be">sales@fima.be</a></li>
+        </ul>
+      </div>
+      <!-- Formulier: wordt bij livegang gekoppeld aan een mailserver of formulierdienst (data-endpoint invullen). -->
+      <form data-endpoint="" novalidate>
+        <div class="field"><label for="f-firma">Bedrijf</label><input id="f-firma" name="bedrijf" autocomplete="organization"></div>
+        <div class="field"><label for="f-mail">E-mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-vraag">Hoe kunnen we helpen?</label><textarea id="f-vraag" name="vraag" required placeholder="Bijvoorbeeld: gewenst debiet en druk, type ventilator, bestaande afmetingen"></textarea></div>
+        <button class="btn btn-navy" type="submit">Verstuur aanvraag</button>
+        <p class="form-note">Wij antwoorden binnen [AANTAL] werkdagen.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div><b>FAT</b><p>FIMA Airtechnic NV<br>Industrieterrein Hoogveld 46, Zone A4<br>9200 Dendermonde</p></div>
+    <div><p><a href="tel:+3252221256">+32 52 22 12 56</a><br><a href="mailto:sales@fima.be">sales@fima.be</a></p></div>
+    <div><p>Ondernemingsnummer<br>[BE 0XXX.XXX.XXX]</p></div>
+    <div class="legal"><span>© 2026 FIMA Airtechnic NV</span><span>Website door CS Group</span></div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var t=document.querySelector('.menu-toggle'), m=document.getElementById('menu');
+  t.addEventListener('click',function(){ var o=m.classList.toggle('open'); t.setAttribute('aria-expanded',String(o)); });
+  m.addEventListener('click',function(e){ if(e.target.closest('a')){ m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){el.classList.add('in');}); }
+  else{ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.15}); els.forEach(function(el){io.observe(el);}); }
+  document.querySelector('form').addEventListener('submit',function(e){ e.preventDefault(); });
+})();
+</script>
+</body>
+</html>
