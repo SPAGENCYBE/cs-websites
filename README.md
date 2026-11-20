@@ -6,7 +6,9 @@ Websites ontworpen in de **CS Group · Web Hub**.
 
 ```
 <klant>/
-  index.html          nieuwste versie die naar GitHub is gestuurd
+  index.html          homepage (basistaal)
+  diensten.html …     andere pagina's
+  fr/ en/             vertaalde pagina's
   assets/             logo en foto's van de klant
   versies/            eerdere versies (datum-stijl.html)
 ```
